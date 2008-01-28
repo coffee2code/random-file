@@ -5,7 +5,9 @@ Version: 1.1
 Plugin URI: http://www.coffee2code.com/wp-plugins/
 Author: Scott Reilly
 Author URI: http://www.coffee2code.com
-Description: Retrieve the name of a randomly chosen file in a given directory.  Useful for displaying random images/logos or including text from random files onto your site (writing excerpts, multi-line quotes, etc).
+Description: Retrieve the name, path, or link to a randomly chosen file in a specified directory.
+
+Useful for displaying random images/logos or including text from random files onto your site (writing excerpts, multi-line quotes, etc).
 
 Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, and 2.3+.
 
@@ -43,16 +45,16 @@ the specified $dir will be under consideration for random selection
 
 - The reference to the randomly selected file can be returned in one of five ways:
 [Assume your WordPress installation is at http://www.yoursite.org/journal/ and you've
-invoked random_file('random/', 'txt', $reftype)]
+invoked c2c_random_file('random/', 'txt', $reftype)]
 
-	$reftype = 'absolute'
-	=> An absolute location relative to the primary domain:
+	$reftype = 'relative'
+	=> A location relative to the primary domain:
 	/journal/random/randomfile.txt
 	[This is the default setting as it is the most applicable.  Absolute referencing is necessary if
 	the random file is to be used as an argument to include() or virtual().  It's also a valid way
 	to reference a file for A HREF= and IMG SRC= linking.]
 
-	$reftype = 'serverabsolute'
+	$reftype = 'absolute'
 	=> An absolute location relative to the root of the server's file system:
 	/usr/local/htdocs/yoursite/www/journal/random/randomfile.txt
 
@@ -78,7 +80,7 @@ Examples:
 // Include random logo or image on your site:
 <img alt="logo" class="logo" src="<?php echo c2c_random_file('/wp-content/images/logos/'); ?>" />
 
-// Insert text from a random file (i.e. for random multi-line quotes):
+// Insert text from a random file (i.e. for random multi-line quotes) (Apache web-server only, probably):
 <blockquote class='todayquote'>
    <?php virtual(c2c_random_file('/quotes/', 'txt')); ?>
 </blockquote>
@@ -133,7 +135,7 @@ function c2c_random_file( $dir, $extensions='', $reftype='relative', $exclusions
 	$random_file = $files[$rand];
 	if ( 'url' == $reftype ) {
 		return get_settings('siteurl') . '/' . $dir . $random_file;
-	} elseif ( 'serverabsolute' == $reftype ) {
+	} elseif ( 'absolute' == $reftype ) {
 		return $abs_dir . $random_file;	/* could also do realpath($random_file); */
 	} elseif ( 'filename' == $reftype ) {
 		return $random_file;
