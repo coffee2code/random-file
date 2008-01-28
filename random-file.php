@@ -1,21 +1,26 @@
 <?php
 /*
 Plugin Name: Random File
-Version: 1.0
+Version: 1.1
 Plugin URI: http://www.coffee2code.com/wp-plugins/
 Author: Scott Reilly
 Author URI: http://www.coffee2code.com
 Description: Retrieve the name of a randomly chosen file in a given directory.  Useful for displaying random images/logos or including text from random files onto your site (writing excerpts, multi-line quotes, etc).
 
-=>> Visit the plugin's homepage for more information and latest updates  <<=
+Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, and 2.3+.
+
+=>> Read the accompanying readme.txt file for more information.  Also, visit the plugin's homepage
+=>> for more information and the latest updates
 
 Installation:
 
-1. Download the file http://www.coffee2code.com/wp-plugins/random-file.zip and unzip it into your /wp-content/plugins/ directory.
+1. Download the file http://www.coffee2code.com/wp-plugins/random-file.zip and unzip it into your
+/wp-content/plugins/ directory.
 -OR-
-Copy and paste the the code ( http://www.coffee2code.com/wp-plugins/random-file.phps ) into a file called random-file.php, and put that file into your /wp-content/plugins/ directory.
-2. Activate the plugin from your WordPress admin 'Plugins' page.
-3. Make use of the function in your template (see examples below).
+Copy and paste the the code ( http://www.coffee2code.com/wp-plugins/random-file.phps ) into a file called 
+random-file.php, and put that file into your /wp-content/plugins/ directory.
+2. Activate the plugin through the 'Plugins' admin menu in WordPress
+3. Make use of the c2c_random_file() template function in your template (see examples below).
 
 
 Notes:
@@ -36,7 +41,7 @@ that as its base... so $dir='randomfiles' would be assumed to actually be:
 - Unless you limit the file search to only include a particular extension (via $extensions argument), all files in
 the specified $dir will be under consideration for random selection
 
-- The reference to the randomly selected file can be returned in one of four ways:
+- The reference to the randomly selected file can be returned in one of five ways:
 [Assume your WordPress installation is at http://www.yoursite.org/journal/ and you've
 invoked random_file('random/', 'txt', $reftype)]
 
@@ -59,6 +64,10 @@ invoked random_file('random/', 'txt', $reftype)]
 	$reftype = 'filename'
 	=> The filename of the random file:
 	randomefile.txt
+	
+	$reftype = 'hyperlink'
+	=> The filename of the random file hyperlinked to that random file:
+	<a href='http://yoursite.org/journal/random/randomfile.txt' title='randomfile.txt'>randomfile.txt</a>
 
 - The $exclusions argument, if specified, MUST be an array of filenames to exclude from consideration as a random file
 
@@ -80,7 +89,7 @@ Examples:
 */
 
 /*
-Copyright (c) 2004-2005 by Scott Reilly (aka coffee2code)
+Copyright (c) 2004-2008 by Scott Reilly (aka coffee2code)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
 files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, 
@@ -102,10 +111,15 @@ function c2c_random_file( $dir, $extensions='', $reftype='relative', $exclusions
 	if ( !empty($extensions) ) $pattern .= '\.(' . implode('|', explode(' ', $extensions)) . ')';
 	$pattern .= '$/i';
 	$dir = trim($dir, '/');
-	$handle = opendir(ABSPATH . $dir);
-	$exclusions = empty($exclusions) ? array() : array_map("basename", $exclusions);
+	$abs_dir = ABSPATH . $dir;
+	if ( !file_exists($abs_dir) )
+		return;
+	$handle = @opendir($abs_dir);
+	if ( false === $handle )
+		return;
+	$exclusions = empty($exclusions) ? array() : array_map('basename', $exclusions);
 	while ( false != ($file = readdir($handle)) ) {
-		if ( is_file(ABSPATH . $dir . '/' . $file) && preg_match($pattern, $file) && !in_array($file, $exclusions) ) {
+		if ( is_file($abs_dir . '/' . $file) && preg_match($pattern, $file) && !in_array($file, $exclusions) ) {
 			$files[] = $file;
 			++$i;
 		}
@@ -116,17 +130,21 @@ function c2c_random_file( $dir, $extensions='', $reftype='relative', $exclusions
 	mt_srand((double)microtime()*1000000);
 	$rand = mt_rand(0, $i);
 	if ( !empty($dir) ) $dir .= '/';
+	$random_file = $files[$rand];
 	if ( 'url' == $reftype ) {
-		return get_settings('siteurl') . '/' . $dir . $files[$rand];
-	} elseif ( 'absolute' == $reftype ) {
-		return ABSPATH . $dir . $files[$rand];
+		return get_settings('siteurl') . '/' . $dir . $random_file;
+	} elseif ( 'serverabsolute' == $reftype ) {
+		return $abs_dir . $random_file;	/* could also do realpath($random_file); */
 	} elseif ( 'filename' == $reftype ) {
-		return $files[$rand];
+		return $random_file;
+	} elseif ( 'hyperlink' == $reftype ) {
+		$url = get_settings('siteurl') . '/' . $dir . $random_file;
+		return "<a href='$url' title='$random_filename'>$random_file</a>";
 	} else {
 		// Need to obtain location relative to root of domain (in case site is based out of subdirectory)
 		preg_match("/^(https?:\/\/)?([^\/]+)\/?(.+)?$/", get_settings('siteurl'), $matches);
 		$relpath = isset($matches[3]) ? '/' . $matches[3] : '';
-		return $relpath . '/' . $dir . $files[$rand];
+		return $relpath . '/' . $dir . $random_file;
 	}
 } //end c2c_random_file()
 
