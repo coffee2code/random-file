@@ -1,26 +1,23 @@
 <?php
 /*
 Plugin Name: Random File
-Version: 1.1
-Plugin URI: http://www.coffee2code.com/wp-plugins/
+Version: 1.5
+Plugin URI: http://coffee2code.com/wp-plugins/random-file
 Author: Scott Reilly
-Author URI: http://www.coffee2code.com
+Author URI: http://coffee2code.com
 Description: Retrieve the name, path, or link to a randomly chosen file in a specified directory.
 
 Useful for displaying random images/logos or including text from random files onto your site (writing excerpts, multi-line quotes, etc).
 
-Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, and 2.3+.
+Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, 2.3+, and 2.5.
 
 =>> Read the accompanying readme.txt file for more information.  Also, visit the plugin's homepage
 =>> for more information and the latest updates
 
 Installation:
 
-1. Download the file http://www.coffee2code.com/wp-plugins/random-file.zip and unzip it into your
+1. Download the file http://coffee2code.com/wp-plugins/random-file.zip and unzip it into your
 /wp-content/plugins/ directory.
--OR-
-Copy and paste the the code ( http://www.coffee2code.com/wp-plugins/random-file.phps ) into a file called 
-random-file.php, and put that file into your /wp-content/plugins/ directory.
 2. Activate the plugin through the 'Plugins' admin menu in WordPress
 3. Make use of the c2c_random_file() template function in your template (see examples below).
 
