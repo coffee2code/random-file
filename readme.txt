@@ -93,3 +93,10 @@ Optional argument.  If specified, MUST be an array of filenames to exclude from 
 * If you wanted to source a random .php file
 `<?php include(c2c_random_file('/randomphp', 'php')); ?>`
 
+== Frequently Asked Questions =
+
+= Does this plugin do dynamic random rotation within a loaded page (i.e. randomly rotating images within a loaded page)? =
+
+No.  This plugin only selects a random file when the page is loaded.  Once loaded, it does not currently add any dynamic functionality to automatically retrieve another random file on its own.
+
+
