@@ -1,10 +1,10 @@
 === Random File ===
 Contributors: coffee2code
-Donate link: http://coffee2code.com
-Tags: random, file
-Requires at least: 2.0.2
-Tested up to: 2.5
-Stable tag: trunk
+Donate link: http://coffee2code.com/donate
+Tags: random, file, coffee2code
+Requires at least: 1.5
+Tested up to: 2.8
+Stable tag: 1.5
 Version: 1.5
 
 Retrieve the name, path, or link to a randomly chosen file in a specified directory.
@@ -93,7 +93,7 @@ Optional argument.  If specified, MUST be an array of filenames to exclude from 
 * If you wanted to source a random .php file
 `<?php include(c2c_random_file('/randomphp', 'php')); ?>`
 
-== Frequently Asked Questions =
+== Frequently Asked Questions ==
 
 = Does this plugin do dynamic random rotation within a loaded page (i.e. randomly rotating images within a loaded page)? =
 
