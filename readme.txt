@@ -5,7 +5,7 @@ Tags: random, file, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
-Tested up to: 4.1
+Tested up to: 4.3
 Stable tag: 1.8.1
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
@@ -186,6 +186,9 @@ Do:
 
 
 == Changelog ==
+
+= () =
+* Change: Note compatibility through WP 4.3+.
 
 = 1.8.1 (2015-02-16) =
 * Minor plugin header reformatting
