@@ -1,15 +1,16 @@
 <?php
 /**
  * Plugin Name: Random File
- * Version:     1.8.1
+ * Version:     1.8.2
  * Plugin URI:  http://coffee2code.com/wp-plugins/random-file/
  * Author:      Scott Reilly
  * Author URI:  http://coffee2code.com/
+ * Text Domain: random-file
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Description: Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
  *
- * Compatible with WordPress 2.8 through 4.3+.
+ * Compatible with WordPress 2.8 through 4.4+.
  *
  * =>> Read the accompanying readme.txt file for instructions and documentation.
  * =>> Also, visit the plugin's homepage for additional information and updates.
@@ -23,11 +24,11 @@
  *
  * @package Random_File
  * @author  Scott Reilly
- * @version 1.8.1
+ * @version 1.8.2
  */
 
 /*
-	Copyright (c) 2004-2015 by Scott Reilly (aka coffee2code)
+	Copyright (c) 2004-2016 by Scott Reilly (aka coffee2code)
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -75,11 +76,16 @@ if ( ! function_exists( 'c2c_random_file' ) ):
  *   'hyperlink' => The filename of the random file hyperlinked to that random file:
  *      <a href='http://yoursite.org/journal/random/randomfile.txt' title='randomfile.txt'>randomfile.txt</a>
  *
- * @param  string $dir        The directory (relative to the root of the site) containing the files to be random chosen from
- * @param  string $extensions (optional) A space-separated list of extensions, one of which the chosen file must have (case insensitive). Default is ''.
- * @param  string $reftype    (optional) One of: absolute, filename, hyperlink, relative, or url.  Default is 'relative'.
- * @param  array  $exclusions (optional) Filenames to exclude from consideration as a random file
- * @return string The random file chosen (if possible)
+ * @param  string $dir        The directory (relative to the root of the site)
+ *                            containing the files to be random chosen from.
+ * @param  string $extensions Optional. A space-separated list of extensions,
+ *                            one of which the chosen file must have (case
+ *                            insensitive). Default ''.
+ * @param  string $reftype    Optional. One of: absolute, filename, hyperlink,
+ *                            relative, or url.  Default 'relative'.
+ * @param  array  $exclusions Optional. Filenames to exclude from consideration
+ *                            as a random file.
+ * @return string The random file chosen (if possible).
  */
 function c2c_random_file( $dir, $extensions = '', $reftype = 'relative', $exclusions = array() ) {
 	$files   = array();
@@ -178,12 +184,18 @@ if ( ! function_exists( 'c2c_random_files' ) ) :
  * (see docs for c2c_random_file() for more details regarding values for
  * arguments)
  *
- * @param  int    $number     The number of random files to select from the specified directory
- * @param  string $dir        The directory (relative to the root of the site) containing the files to be random chosen from
- * @param  string $extensions (optional) A space-separated list of extensions, one of which the chosen file must have (case insensitive). Default is ''.
- * @param  string $reftype    (optional) One of: absolute, filename, hyperlink, relative, or url.  Default is 'relative'.
- * @param  array  $exclusions (optional) Filenames to exclude from consideration as a random file
- * @return array  The random files chosen (if possible)
+ * @param  int    $number     The number of random files to select from the
+ *                            specified directory.
+ * @param  string $dir        The directory (relative to the root of the site)
+ *                            containing the files to be random chosen from.
+ * @param  string $extensions Optional. A space-separated list of extensions,
+ *                            one of which the chosen file must have (case
+ *                            insensitive). Default ''.
+ * @param  string $reftype    Optional. One of: absolute, filename, hyperlink,
+ *                            relative, or url.  Default 'relative'.
+ * @param  array  $exclusions Optional. Filenames to exclude from consideration
+ *                            as a random file.
+ * @return array  The random files chosen (if possible).
  */
 function c2c_random_files( $number, $dir, $extensions = '', $reftype = 'relative', $exclusions = array() ) {
 	$number     = absint( $number );
