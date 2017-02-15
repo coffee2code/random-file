@@ -5,7 +5,7 @@ Tags: random, file, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
-Tested up to: 4.4
+Tested up to: 4.7
 Stable tag: 1.8.2
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
@@ -192,6 +192,7 @@ Do:
 * Change: Update unit test bootstrap
     * Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable
     * Enable more error output for unit tests
+* Change: Note compatibility through WP 4.7+
 * Change: Update copyright date (2017)
 
 = 1.8.2 (2016-03-22) =
