@@ -188,6 +188,7 @@ Do:
 == Changelog ==
 
 = () =
+* Fix: Use correct variable name when handling the 'hyperlink' reftype
 * Change: Update unit test bootstrap
     * Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable
     * Enable more error output for unit tests
