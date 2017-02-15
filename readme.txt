@@ -187,6 +187,10 @@ Do:
 
 == Changelog ==
 
+= () =
+* Change: Update unit test bootstrap
+    * Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable
+
 = 1.8.2 (2016-03-22) =
 * Change: Add 'Text Domain' to plugin header.
 * Change: Explicitly declare methods in unit tests as public.
