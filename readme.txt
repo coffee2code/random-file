@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 4.7
-Stable tag: 1.8.2
+Stable tag: 1.8.3
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
 
@@ -187,7 +187,7 @@ Do:
 
 == Changelog ==
 
-= () =
+= 1.8.3 (2017-02-15) =
 * Fix: Use correct variable name when handling the 'hyperlink' reftype
 * Change: Update unit test bootstrap
     * Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable
@@ -296,6 +296,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 1.8.3 =
+Recommended minor update: fixed inccorect name of variable, noted compatibility through WP 4.7+, updated copyright date
 
 = 1.8.2 =
 Trivial update: noted compatibility through WP 4.4+ and updated copyright date (2016)
