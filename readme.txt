@@ -143,7 +143,7 @@ Optional argument. If specified, MUST be an array of filenames to exclude from c
 `
 
 
-== Filters ==
+== Hooks ==
 
 The plugin exposes two filters for hooking. Typically, customizations utilizing these hooks would be put into your active theme's functions.php file, or used by another plugin.
 
@@ -191,6 +191,7 @@ Do:
 * Change: Add GitHub link to readme
 * Change: Note compatibility through WP 4.9+
 * Change: Update copyright date (2018)
+* Change: Rename readme.txt section from 'Filters' to 'Hooks'
 
 = 1.8.3 (2017-02-15) =
 * Fix: Use correct variable name when handling the 'hyperlink' reftype
