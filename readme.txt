@@ -188,6 +188,7 @@ Do:
 == Changelog ==
 
 = () =
+* New: Add README.md
 * Change: Add GitHub link to readme
 * Change: Note compatibility through WP 4.9+
 * Change: Update copyright date (2018)
