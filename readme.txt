@@ -147,7 +147,7 @@ Optional argument. If specified, MUST be an array of filenames to exclude from c
 
 The plugin exposes two filters for hooking. Typically, customizations utilizing these hooks would be put into your active theme's functions.php file, or used by another plugin.
 
-= c2c_random_file (filter) =
+**c2c_random_file (filter)**
 
 The 'c2c_random_file' hook allows you to use an alternative approach to safely invoke `c2c_random_file()` in such a way that if the plugin were deactivated or deleted, then your calls to the function won't cause errors in your site.
 
@@ -165,7 +165,7 @@ Do:
 
 `<?php $file = apply_filters( 'c2c_random_file', 'wp-content/randomfiles' ); ?>`
 
-= c2c_random_files (filter) =
+**c2c_random_files (filter)**
 
 The 'c2c_random_files' hook allows you to use an alternative approach to safely invoke `c2c_random_files()` in such a way that if the plugin were deactivated or deleted, then your calls to the function won't cause errors in your site.
 
@@ -192,6 +192,7 @@ Do:
 * Change: Note compatibility through WP 4.9+
 * Change: Update copyright date (2018)
 * Change: Rename readme.txt section from 'Filters' to 'Hooks'
+* Change: Modify formatting of hook name in readme to prevent being uppercased when shown in the Plugin Directory
 
 = 1.8.3 (2017-02-15) =
 * Fix: Use correct variable name when handling the 'hyperlink' reftype
