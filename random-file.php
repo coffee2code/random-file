@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Random File
- * Version:     1.8.3
+ * Version:     1.8.4
  * Plugin URI:  http://coffee2code.com/wp-plugins/random-file/
  * Author:      Scott Reilly
  * Author URI:  http://coffee2code.com/
@@ -24,7 +24,7 @@
  *
  * @package Random_File
  * @author  Scott Reilly
- * @version 1.8.3
+ * @version 1.8.4
  */
 
 /*
@@ -51,7 +51,7 @@ if ( ! function_exists( 'c2c_random_file' ) ):
 
 /**
  * Retrieves the name, path, or link to a randomly chosen file in a specified
- *  directory.
+ * directory.
  *
  * Details on the acceptable values for $reftype:
  *

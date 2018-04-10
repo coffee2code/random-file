@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 4.9
-Stable tag: 1.8.3
+Stable tag: 1.8.4
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
 
@@ -187,7 +187,7 @@ Do:
 
 == Changelog ==
 
-= () =
+= 1.8.4 (2018-04-09) =
 * New: Add README.md
 * Change: Minor whitespace tweaks to unit test bootstrap
 * Change: Add GitHub link to readme
@@ -306,6 +306,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 1.8.4 =
+Trivial update: noted compatibility through WP 4.9+, added README.md for GitHub, and updated copyright date (2018)
 
 = 1.8.3 =
 Recommended minor update: fixed inccorect name of variable, noted compatibility through WP 4.7+, updated copyright date
