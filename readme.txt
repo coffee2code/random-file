@@ -28,7 +28,7 @@ Notes:
 
 * Can be run inside or outside of "the loop"
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/random-file/) | [Plugin Directory Page](https://wordpress.org/plugins/random-file/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/random-file/) | [Plugin Directory Page](https://wordpress.org/plugins/random-file/) | [GitHub](https://github.com/coffe2code/random-file/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -188,6 +188,7 @@ Do:
 == Changelog ==
 
 = () =
+* Change: Add GitHub link to readme
 * Change: Note compatibility through WP 4.9+
 * Change: Update copyright date (2018)
 
