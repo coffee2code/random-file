@@ -187,6 +187,9 @@ Do:
 
 == Changelog ==
 
+= () =
+* Change: Update copyright date (2018)
+
 = 1.8.3 (2017-02-15) =
 * Fix: Use correct variable name when handling the 'hyperlink' reftype
 * Change: Update unit test bootstrap
