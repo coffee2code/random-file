@@ -33,7 +33,7 @@ Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/random-file/) | [Plug
 
 == Installation ==
 
-1. Unzip `random-file.zip` inside the `/wp-content/plugins/` directory (or install via the built-in WordPress plugin installer)
+1. Install via the built-in WordPress plugin installer. Or download and unzip `random-file.zip` inside the plugins directory for your site (typically `wp-content/plugins/`)
 1. Activate the plugin through the 'Plugins' admin menu in WordPress
 1. Make use of the `c2c_random_file()` or `c2c_random_files()` template function in your code or template (see examples below).
 
@@ -195,6 +195,7 @@ Do:
 * Change: Update copyright date (2018)
 * Change: Rename readme.txt section from 'Filters' to 'Hooks'
 * Change: Modify formatting of hook name in readme to prevent being uppercased when shown in the Plugin Directory
+* Change: Update installation instruction to prefer built-in installer over .zip file
 
 = 1.8.3 (2017-02-15) =
 * Fix: Use correct variable name when handling the 'hyperlink' reftype
