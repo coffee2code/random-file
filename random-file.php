@@ -7,7 +7,7 @@
  * Author URI:  http://coffee2code.com/
  * Text Domain: random-file
  * License:     GPLv2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Description: Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
  *
  * Compatible with WordPress 2.8 through 4.9+.
