@@ -28,7 +28,7 @@ Notes:
 
 * Can be run inside or outside of "the loop"
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/random-file/) | [Plugin Directory Page](https://wordpress.org/plugins/random-file/) | [GitHub](https://github.com/coffe2code/random-file/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/random-file/) | [Plugin Directory Page](https://wordpress.org/plugins/random-file/) | [GitHub](https://github.com/coffee2code/random-file/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
