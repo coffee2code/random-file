@@ -2,6 +2,7 @@
 
 ## _(in-progress)_
 * New: Add CHANGELOG.md and move all but most recent changelog entries into it
+* Change: Note compatibility through WP 5.2+
 
 ## 1.8.5 _(2019-02-18)_
 * Change: Note compatibility through WP 5.1+
