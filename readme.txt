@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 5.2
-Stable tag: 1.8.5
+Stable tag: 1.8.6
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
 
@@ -187,6 +187,13 @@ Do:
 
 == Changelog ==
 
+= 1.8.6 (2019-06-14) =
+* New: Add CHANGELOG.md and move all but most recent changelog entries into it
+* Change: Update unit test install script and bootstrap to use latest WP unit test repo
+* Change: Note compatibility through WP 5.2+
+* Fix: Correct typo in GitHub URL
+* Change: Split paragraph in README.md's "Support" section into two
+
 = 1.8.5 (2019-02-18) =
 * Change: Note compatibility through WP 5.1+
 * Change: Update copyright date (2019)
@@ -206,6 +213,9 @@ _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/ra
 
 
 == Upgrade Notice ==
+
+= 1.8.6 =
+Trivial update: modernized unit tests, noted compatibility through WP 5.2+
 
 = 1.8.5 =
 Trivial update: noted compatibility through WP 5.1+, updated copyright date (2019)
