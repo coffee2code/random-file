@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 5.3
-Stable tag: 1.8.6
+Stable tag: 1.8.7
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
 
@@ -187,6 +187,10 @@ Do:
 
 == Changelog ==
 
+= 1.8.7 (2019-12-15) =
+* Change: Note compatibility through WP 5.3+
+* Change: Update copyright date (2020)
+
 = 1.8.6 (2019-06-14) =
 * New: Add CHANGELOG.md and move all but most recent changelog entries into it
 * Change: Update unit test install script and bootstrap to use latest WP unit test repo
@@ -199,20 +203,13 @@ Do:
 * Change: Update copyright date (2019)
 * Change: Update License URI to be HTTPS
 
-= 1.8.4 (2018-04-09) =
-* New: Add README.md
-* Change: Minor whitespace tweaks to unit test bootstrap
-* Change: Add GitHub link to readme
-* Change: Note compatibility through WP 4.9+
-* Change: Update copyright date (2018)
-* Change: Rename readme.txt section from 'Filters' to 'Hooks'
-* Change: Modify formatting of hook name in readme to prevent being uppercased when shown in the Plugin Directory
-* Change: Update installation instruction to prefer built-in installer over .zip file
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/random-file/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.8.7 =
+Trivial update: noted compatibility through WP 5.3+ and updated copyright date (2020)
 
 = 1.8.6 =
 Trivial update: modernized unit tests, noted compatibility through WP 5.2+
