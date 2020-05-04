@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 5.4
-Stable tag: 1.8.7
+Stable tag: 1.8.8
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
 
@@ -187,6 +187,12 @@ Do:
 
 == Changelog ==
 
+= 1.8.8 (2020-05-04) =
+* Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
+* Change: Note compatibility through WP 5.4+
+* Change: Update links to coffee2code.com to be HTTPS
+* Change: Update examples in documentation to use a proper example URL
+
 = 1.8.7 (2019-12-15) =
 * Change: Note compatibility through WP 5.3+
 * Change: Update copyright date (2020)
@@ -198,15 +204,13 @@ Do:
 * Fix: Correct typo in GitHub URL
 * Change: Split paragraph in README.md's "Support" section into two
 
-= 1.8.5 (2019-02-18) =
-* Change: Note compatibility through WP 5.1+
-* Change: Update copyright date (2019)
-* Change: Update License URI to be HTTPS
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/random-file/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.8.8 =
+Trivial update: Updated a few URLs to be HTTPS and noted compatibility through WP 5.4+.
 
 = 1.8.7 =
 Trivial update: noted compatibility through WP 5.3+ and updated copyright date (2020)
