@@ -64,17 +64,17 @@ if ( ! function_exists( 'c2c_random_file' ) ):
  *
  *   'absolute' => An absolute location relative to the root of the server's
  *      file system:
- *      /usr/local/htdocs/yoursite/www/journal/random/randomfile.txt
+ *      /usr/local/htdocs/example.com/www/journal/random/randomfile.txt
  *
  *   'url' => The URL of the random file:
- *      http://www.yoursite.org/journal/random/randomfile.txt
+ *      https://example.com/journal/random/randomfile.txt
  *      [If you desire the use of full URL, i.e. for A HREF= or IMG SRC= link.]
  *
  *   'filename' => The filename of the random file:
  *      randomefile.txt
  *
  *   'hyperlink' => The filename of the random file hyperlinked to that random file:
- *      <a href='http://yoursite.org/journal/random/randomfile.txt' title='randomfile.txt'>randomfile.txt</a>
+ *      <a href='https://example.com/journal/random/randomfile.txt' title='randomfile.txt'>randomfile.txt</a>
  *
  * @param  string $dir        The directory (relative to the root of the site)
  *                            containing the files to be random chosen from.

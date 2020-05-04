@@ -63,7 +63,7 @@ This retrieves the name, path, or link to a specified number of randomly chosen 
 The number of random files to select from the specified directory. If less files are present in the specified directory, then all files in the directory will be returned (but will be listed in random order).
 
 * `$dir`
-The directory to search for a random file. The directory must exist at the directory structure level of your WordPress installation or below. (i.e., if your site is installed on your server at `/usr/local/htdocs/yoursite/www/journal/`, then the directory of random files you specified will assume that as its base... so a value of `'randomfiles'` would be assumed to actually be: `/usr/local/htdocs/yoursite/www/journal/randomfiles/`)
+The directory to search for a random file. The directory must exist at the directory structure level of your WordPress installation or below. (i.e., if your site is installed on your server at `/usr/local/htdocs/example.com/www/journal/`, then the directory of random files you specified will assume that as its base... so a value of `'randomfiles'` would be assumed to actually be: `/usr/local/htdocs/example.com/www/journal/randomfiles/`)
 
 * `$extensions`
 Optional argument. A space-separated list of extensions (case insensitive), i.e. 'jpg gif png jpeg'.
@@ -77,7 +77,7 @@ Optional argument. If specified, MUST be an array of filenames to exclude from c
 = Examples =
 
 * The reference to the randomly selected file can be returned in one of five ways:
-[Assume your WordPress installation is at http://www.yoursite.org/journal/ and you've invoked `c2c_random_file('random/', 'txt', $reftype)`]
+[Assume your WordPress installation is at https://example.com/journal/ and you've invoked `c2c_random_file('random/', 'txt', $reftype)`]
 
 	$reftype = 'relative'
 
@@ -91,13 +91,13 @@ Optional argument. If specified, MUST be an array of filenames to exclude from c
 
 	=> An absolute location relative to the root of the server's file system:
 
-    `/usr/local/htdocs/yoursite/www/journal/random/randomfile.txt`
+    `/usr/local/htdocs/example.com/www/journal/random/randomfile.txt`
 
 	$reftype = 'url'
 
 	=> The URL of the random file:
 
-    `http://www.yoursite.org/journal/random/randomfile.txt`
+    `https://example.com/journal/random/randomfile.txt`
 
 	[If you desire the use of full URL, such as for a A HREF= or IMG SRC= link.]
 
@@ -111,7 +111,7 @@ Optional argument. If specified, MUST be an array of filenames to exclude from c
 
 	=> The filename of the random file hyperlinked to that random file:
 
-    `<a href='http://yoursite.org/journal/random/randomfile.txt' title='randomfile.txt'>randomfile.txt</a>`
+    `<a href='https://example.com/journal/random/randomfile.txt' title='randomfile.txt'>randomfile.txt</a>`
 
 * Include random logo or image on your site:
 
