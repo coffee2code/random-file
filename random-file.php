@@ -2,9 +2,9 @@
 /**
  * Plugin Name: Random File
  * Version:     1.8.7
- * Plugin URI:  http://coffee2code.com/wp-plugins/random-file/
+ * Plugin URI:  https://coffee2code.com/wp-plugins/random-file/
  * Author:      Scott Reilly
- * Author URI:  http://coffee2code.com/
+ * Author URI:  https://coffee2code.com/
  * Text Domain: random-file
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
