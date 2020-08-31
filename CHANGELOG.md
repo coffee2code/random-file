@@ -10,6 +10,7 @@
     * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
 * Change: Note compatibility through WP 5.5+
 * New: Add FAQ indicating presence of unit tests
+* Change: Unit tests: Change regex delimiters from `/` to `~` to avoid having to escape frequent use of `/` in patterns
 
 ## 1.8.8 _(2020-05-04)_
 * Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests

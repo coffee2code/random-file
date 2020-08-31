@@ -25,7 +25,7 @@ class Random_File_Test extends WP_UnitTestCase {
 
 		$this->assertNotEmpty( $random_file );
 		$this->assertFileExists( ABSPATH . $random_file );
-		$this->assertRegExp( '/wp-includes\//', $random_file );
+		$this->assertRegExp( '~wp-includes/~', $random_file );
 	}
 
 	public function test_valid_directory_with_preceding_forward_slash() {
@@ -33,7 +33,7 @@ class Random_File_Test extends WP_UnitTestCase {
 
 		$this->assertNotEmpty( $random_file );
 		$this->assertFileExists( ABSPATH . $random_file );
-		$this->assertRegExp( '/wp-includes\//', $random_file );
+		$this->assertRegExp( '~wp-includes/~', $random_file );
 	}
 
 	public function test_valid_directory_with_trailing_slash() {
@@ -41,7 +41,7 @@ class Random_File_Test extends WP_UnitTestCase {
 
 		$this->assertNotEmpty( $random_file );
 		$this->assertFileExists( ABSPATH . $random_file );
-		$this->assertRegExp( '/wp-includes\/images\//', $random_file );
+		$this->assertRegExp( '~wp-includes/images/~', $random_file );
 	}
 
 	public function test_valid_directory_with_subdirectory() {
@@ -49,7 +49,7 @@ class Random_File_Test extends WP_UnitTestCase {
 
 		$this->assertNotEmpty( $random_file );
 		$this->assertFileExists( ABSPATH . $random_file );
-		$this->assertRegExp( '/wp-includes\/images\//', $random_file );
+		$this->assertRegExp( '~wp-includes/images/~', $random_file );
 	}
 
 	public function test_invalid_directory() {
@@ -61,7 +61,7 @@ class Random_File_Test extends WP_UnitTestCase {
 
 		$this->assertNotEmpty( $random_file );
 		$this->assertFileExists( ABSPATH . $random_file );
-		$this->assertRegExp( '/wp-includes\/images\/.+\.gif$/', $random_file );
+		$this->assertRegExp( '~wp-includes/images/.+\.gif$~', $random_file );
 	}
 
 	public function test_matching_extension_case_insensitivity( $random_file = '' ) {
@@ -71,7 +71,7 @@ class Random_File_Test extends WP_UnitTestCase {
 
 		$this->assertNotEmpty( $random_file );
 		$this->assertFileExists( ABSPATH . $random_file );
-		$this->assertRegExp( '/wp-includes\/images\/.+\.gif$/', $random_file );
+		$this->assertRegExp( '~wp-includes/images/.+\.gif$~', $random_file );
 	}
 
 	public function test_matching_multiple_extensions() {
@@ -79,7 +79,7 @@ class Random_File_Test extends WP_UnitTestCase {
 
 		$this->assertNotEmpty( $random_file );
 		$this->assertFileExists( ABSPATH . $random_file );
-		$this->assertRegExp( '/wp-includes\/images\/.+\.(jpg|gif)$/', $random_file );
+		$this->assertRegExp( '~wp-includes/images/.+\.(jpg|gif)$~', $random_file );
 	}
 
 	public function test_no_matching_extension() {
@@ -91,7 +91,7 @@ class Random_File_Test extends WP_UnitTestCase {
 
 		$this->assertNotEmpty( $random_file );
 		$this->assertFileExists( ABSPATH . $random_file );
-		$this->assertRegExp( '/wp-includes\/images\//', $random_file );
+		$this->assertRegExp( '~wp-includes/images/~', $random_file );
 	}
 
 	public function test_reftype_absolute( $random_file = '' ) {
@@ -116,14 +116,14 @@ class Random_File_Test extends WP_UnitTestCase {
 
 		$this->assertNotEmpty( $random_file );
 		$this->assertFileExists( str_replace( 'http://example.org/', ABSPATH, $random_file ) );
-		$this->assertRegExp( '/^http:\/\/example.org\/wp-includes\/images\//', $random_file );
+		$this->assertRegExp( '~^http://example.org/wp-includes/images/~', $random_file );
 	}
 
 	public function test_reftype_hyperlink() {
 		$random_file = c2c_random_file( 'wp-includes/images', '', 'hyperlink' );
 
 		$this->assertNotEmpty( $random_file );
-		$this->assertRegExp( '/<a href="http:\/\/example.org\/wp-includes\/images\//', $random_file );
+		$this->assertRegExp( '~<a href="http://example.org/wp-includes/images/~', $random_file );
 	}
 
 	public function test_file_exclusion() {
