@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Random File
- * Version:     1.8.8
+ * Version:     1.8.9
  * Plugin URI:  https://coffee2code.com/wp-plugins/random-file/
  * Author:      Scott Reilly
  * Author URI:  https://coffee2code.com/
@@ -18,7 +18,7 @@
  *
  * @package Random_File
  * @author  Scott Reilly
- * @version 1.8.8
+ * @version 1.8.9
  */
 
 /*

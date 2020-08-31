@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 5.5
-Stable tag: 1.8.8
+Stable tag: 1.8.9
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
 
@@ -191,6 +191,18 @@ Do:
 
 == Changelog ==
 
+= 1.8.9 (2020-08-31) =
+* New: Add TODO.md and move existing TODO list from top of main plugin file into it
+* Change: Restructure unit test file structure
+    * New: Create new subdirectory `phpunit/` to house all files related to unit testing
+    * Change: Move `bin/` to `phpunit/bin/`
+    * Change: Move `tests/bootstrap.php` to `phpunit/`
+    * Change: Move `tests/` to `phpunit/tests/`
+    * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
+* Change: Note compatibility through WP 5.5+
+* New: Add FAQ indicating presence of unit tests
+* Change: Unit tests: Change regex delimiters from `/` to `~` to avoid having to escape frequent use of `/` in patterns
+
 = 1.8.8 (2020-05-04) =
 * Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
 * Change: Note compatibility through WP 5.4+
@@ -201,17 +213,13 @@ Do:
 * Change: Note compatibility through WP 5.3+
 * Change: Update copyright date (2020)
 
-= 1.8.6 (2019-06-14) =
-* New: Add CHANGELOG.md and move all but most recent changelog entries into it
-* Change: Update unit test install script and bootstrap to use latest WP unit test repo
-* Change: Note compatibility through WP 5.2+
-* Fix: Correct typo in GitHub URL
-* Change: Split paragraph in README.md's "Support" section into two
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/random-file/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.8.9 =
+Trivial update: Restructured unit test file structure, added a TODO.md file, and noted compatibility through WP 5.5+.
 
 = 1.8.8 =
 Trivial update: Updated a few URLs to be HTTPS and noted compatibility through WP 5.4+.
