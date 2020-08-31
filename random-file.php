@@ -16,12 +16,6 @@
  * =>> Also, visit the plugin's homepage for additional information and updates.
  * =>> Or visit: https://wordpress.org/plugins/random-file/
  *
- * TODO:
- * - Add widget
- * - Facilitate running a randomly chosen .php file
- * - Facilitate inlining randomly chosen file (any, or at least: .txt, .css, .js, .php, .html)
- * - Facilitate displaying randomly chosen image
- *
  * @package Random_File
  * @author  Scott Reilly
  * @version 1.8.8
