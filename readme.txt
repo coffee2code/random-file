@@ -44,6 +44,10 @@ Links: [Plugin Homepage](https://coffee2code.com/wp-plugins/random-file/) | [Plu
 
 No. This plugin only selects a random file when the page is loaded. Once loaded, it does not currently add any dynamic functionality to automatically retrieve another random file on its own.
 
+= Does this plugin include unit tests? =
+
+Yes.
+
 
 == Template Tags ==
 
