@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 5.7
-Stable tag: 1.8.9
+Stable tag: 1.8.10
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
 
@@ -191,6 +191,10 @@ Do:
 
 == Changelog ==
 
+= 1.8.10 (2021-04-23) =
+* Change: Note compatibility through WP 5.7+
+* Change: Update copyright date (2021)
+
 = 1.8.9 (2020-08-31) =
 * New: Add TODO.md and move existing TODO list from top of main plugin file into it
 * Change: Restructure unit test file structure
@@ -209,14 +213,13 @@ Do:
 * Change: Update links to coffee2code.com to be HTTPS
 * Change: Update examples in documentation to use a proper example URL
 
-= 1.8.7 (2019-12-15) =
-* Change: Note compatibility through WP 5.3+
-* Change: Update copyright date (2020)
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/random-file/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.8.10 =
+Trivial update: noted compatibility through WP 5.7+ and updated copyright date (2021).
 
 = 1.8.9 =
 Trivial update: Restructured unit test file structure, added a TODO.md file, and noted compatibility through WP 5.5+.
