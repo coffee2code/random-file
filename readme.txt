@@ -5,7 +5,7 @@ Tags: random, file, coffee2code
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
-Tested up to: 5.5
+Tested up to: 5.7
 Stable tag: 1.8.9
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
