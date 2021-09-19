@@ -10,7 +10,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Description: Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
  *
- * Compatible with WordPress 2.8 through 5.7+.
+ * Compatible with WordPress 2.8 through 5.8+.
  *
  * =>> Read the accompanying readme.txt file for instructions and documentation.
  * =>> Also, visit the plugin's homepage for additional information and updates.
