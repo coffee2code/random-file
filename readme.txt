@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 5.8
-Stable tag: 1.8.10
+Stable tag: 1.8.11
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
 
@@ -191,6 +191,16 @@ Do:
 
 == Changelog ==
 
+= 1.8.11 (2021-09-18) =
+* Change: Note compatibility through WP 5.8+
+* Unit tests:
+    * Change: Restructure unit test directories
+        * Change: Move `phpunit/` into `tests/`
+        * Change: Move `phpunit/bin` into `tests/`
+    * Change: Remove 'test-' prefix from unit test file
+    * Change: In bootstrap, store path to plugin file constant
+    * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
+
 = 1.8.10 (2021-04-23) =
 * Change: Note compatibility through WP 5.7+
 * Change: Update copyright date (2021)
@@ -207,16 +217,13 @@ Do:
 * New: Add FAQ indicating presence of unit tests
 * Change: Unit tests: Change regex delimiters from `/` to `~` to avoid having to escape frequent use of `/` in patterns
 
-= 1.8.8 (2020-05-04) =
-* Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
-* Change: Note compatibility through WP 5.4+
-* Change: Update links to coffee2code.com to be HTTPS
-* Change: Update examples in documentation to use a proper example URL
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/random-file/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.8.11 =
+Trivial update: noted compatibility through WP 5.8+ and minor reorganization and tweaks to unit tests
 
 = 1.8.10 =
 Trivial update: noted compatibility through WP 5.7+ and updated copyright date (2021).
