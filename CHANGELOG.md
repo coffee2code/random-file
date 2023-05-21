@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Change: Update copyright date (2023)
+
 ## 1.8.11 _(2021-09-18)_
 * Change: Note compatibility through WP 5.8+
 * Unit tests:
