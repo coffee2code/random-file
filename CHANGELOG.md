@@ -1,6 +1,6 @@
 # Changelog
 
-## _(in-progress)_
+## 1.8.12 _(2023-05-21)_
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
 * Change: Note compatibility through WP 6.3+
 * Change: Update copyright date (2023)

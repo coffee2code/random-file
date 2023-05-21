@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 6.3
-Stable tag: 1.8.11
+Stable tag: 1.8.12
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
 
@@ -66,6 +66,11 @@ Theses are the hooks provided by the plugin:
 
 == Changelog ==
 
+= 1.8.12 (2023-05-21) =
+* New: Add DEVELOPER-DOCS.md and move hooks documentation into it
+* Change: Note compatibility through WP 6.3+
+* Change: Update copyright date (2023)
+
 = 1.8.11 (2021-09-18) =
 * Change: Note compatibility through WP 5.8+
 * Unit tests:
@@ -80,22 +85,13 @@ Theses are the hooks provided by the plugin:
 * Change: Note compatibility through WP 5.7+
 * Change: Update copyright date (2021)
 
-= 1.8.9 (2020-08-31) =
-* New: Add TODO.md and move existing TODO list from top of main plugin file into it
-* Change: Restructure unit test file structure
-    * New: Create new subdirectory `phpunit/` to house all files related to unit testing
-    * Change: Move `bin/` to `phpunit/bin/`
-    * Change: Move `tests/bootstrap.php` to `phpunit/`
-    * Change: Move `tests/` to `phpunit/tests/`
-    * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
-* Change: Note compatibility through WP 5.5+
-* New: Add FAQ indicating presence of unit tests
-* Change: Unit tests: Change regex delimiters from `/` to `~` to avoid having to escape frequent use of `/` in patterns
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/random-file/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.8.12 =
+Trivial update: added DEVELOPER-DOCS.md, noted compatibility through WP 6.3+, and updated copyright date (2023)
 
 = 1.8.11 =
 Trivial update: noted compatibility through WP 5.8+ and minor reorganization and tweaks to unit tests
