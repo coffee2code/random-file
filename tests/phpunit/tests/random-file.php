@@ -64,6 +64,18 @@ class Random_File_Test extends WP_UnitTestCase {
 		$this->assertRegExp( '~wp-includes/images/.+\.gif$~', $random_file );
 	}
 
+	public function test_no_matching_extension_with_nonextistent_extension() {
+		$random_file = c2c_random_file( 'wp-includes/images', 'mov' );
+
+		$this->assertFalse( $random_file );
+	}
+
+	public function test_no_matching_extension_with_invalid_extension() {
+		$random_file = c2c_random_file( 'wp-includes/images', 3.4 );
+
+		$this->assertFalse( $random_file );
+	}
+
 	public function test_no_matching_extension_when_regex_character_used() {
 		$random_file = c2c_random_file( 'wp-includes/images', 'g.f' );
 
