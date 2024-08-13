@@ -5,7 +5,8 @@
  * @package Random_File
  */
 
-define( 'RANDOM_FILE_PLUGIN_FILE', dirname( __FILE__, 3 ) . '/random-file.php' );
+define( 'RANDOM_FILE_PLUGIN_DIR',  dirname( __FILE__, 3 ) );
+define( 'RANDOM_FILE_PLUGIN_FILE', RANDOM_FILE_PLUGIN_DIR . '/random-file.php' );
 
 ini_set( 'display_errors', 'on' );
 error_reporting( E_ALL );

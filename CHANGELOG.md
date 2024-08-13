@@ -4,6 +4,8 @@
 * Change: Note compatibility through WP 6.6+
 * Change: Update copyright date (2024)
 * New: Add `.gitignore` file
+* Unit tests:
+    * Change: In bootstrap, store path to plugin directory in a constant
 
 ## 1.8.12 _(2023-05-21)_
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
