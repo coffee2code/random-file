@@ -8,9 +8,9 @@ The plugin provides two template tags for use in your theme templates, functions
 
 ### Functions:
 
-* `<?php function c2c_random_file( $dir, $extensions = '', $reftype = 'relative', $exclusions = array() ) ?>`
+* `<?php function c2c_random_file( $dir, $extensions = array(), $reftype = 'relative', $exclusions = array() ) ?>`
 This retrieves the name of a random file from a specified directory and returns information based on the file according to the `$reftype` value.
-* `<?php function c2c_random_files( $number, $dir, $extensions = '', $reftype = 'relative', $exclusions = array() ) ?>`
+* `<?php function c2c_random_files( $number, $dir, $extensions = array(), $reftype = 'relative', $exclusions = array() ) ?>`
 This retrieves the name, path, or link to a specified number of randomly chosen files in a specified directory. All but the `$number` argument are passed along in calls to `c2c_random_file()`.
 
 ### Arguments:
@@ -21,8 +21,8 @@ Required. The number of random files to select from the specified directory. If 
 * `$dir` _(string)_
 The directory to search for a random file. The directory must exist at the directory structure level of your WordPress installation or below. (i.e., if your site is installed on your server at `/usr/local/htdocs/example.com/www/journal/`, then the directory of random files you specified will assume that as its base... so a value of `'randomfiles'` would be assumed to actually be: `/usr/local/htdocs/example.com/www/journal/randomfiles/`)
 
-* `$extensions` _(string)_
-Optional argument. A space-separated list of extensions (case insensitive), i.e. 'jpg gif png jpeg'.
+* `$extensions` _(string[] | string)_
+Optional argument. An array, or space-separated list, of file extensions (case insensitive), one of which the chosen random file must have, i.e. 'jpg gif png jpeg'. By default the random file can have any extension.
 
 * `$reftype` _(string)_
 Optional argument. Can be one of the following: 'relative' (which is the default), 'absolute', 'url', 'filename', 'hyperlink'. See Examples section for more details and examples.

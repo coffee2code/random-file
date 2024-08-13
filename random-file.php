@@ -72,24 +72,30 @@ if ( ! function_exists( 'c2c_random_file' ) ):
  *
  * @param  string $dir        The directory (relative to the root of the site)
  *                            containing the files to be random chosen from.
- * @param  string $extensions Optional. A space-separated list of extensions,
- *                            one of which the chosen file must have (case
- *                            insensitive). Default ''.
+ * @param  string[]|string $extensions Optional. An array, or space-separated list,
+ *                            of file extensions, one of which the chosen file must
+ *                            have. (Case insensitive.) Default empty array.
  * @param  string $reftype    Optional. One of: absolute, filename, hyperlink,
  *                            relative, or url.  Default 'relative'.
  * @param  array  $exclusions Optional. Filenames to exclude from consideration
- *                            as a random file.
+ *                            as a random file. Default empty array.
  * @return string|false The random file chosen, or false if no file was found.
  */
-function c2c_random_file( $dir, $extensions = '', $reftype = 'relative', $exclusions = array() ) {
+function c2c_random_file( $dir, $extensions = array(), $reftype = 'relative', $exclusions = array() ) {
 	$files   = array();
 	$i       = -1;
 	$pattern = '/.*';
 
 	if ( ! empty( $extensions ) ) {
-		$exts = array();
-		foreach ( explode( ' ', $extensions ) as $ext ) {
-			$exts[] = preg_quote( $ext, '/' );
+		if ( is_array( $extensions ) ) {
+			$exts = array_map( function ( $ext ) {
+				return preg_quote( $ext, '/' );
+			}, $extensions );
+		} else {
+			$exts = array();
+			foreach ( explode( ' ', $extensions ) as $ext ) {
+				$exts[] = preg_quote( $ext, '/' );
+			}
 		}
 		$pattern .= '\.(' . implode( '|', $exts ) . ')';
 	}
@@ -180,16 +186,16 @@ if ( ! function_exists( 'c2c_random_files' ) ) :
  *                            specified directory.
  * @param  string $dir        The directory (relative to the root of the site)
  *                            containing the files to be random chosen from.
- * @param  string $extensions Optional. A space-separated list of extensions,
- *                            one of which the chosen file must have (case
- *                            insensitive). Default ''.
+ * @param  string[]|string $extensions Optional. An array, or space-separated list,
+ *                            of file extensions, one of which the chosen file must
+ *                            have. (Case insensitive.) Default empty array.
  * @param  string $reftype    Optional. One of: absolute, filename, hyperlink,
- *                            relative, or url.  Default 'relative'.
+ *                            relative, or url. Default 'relative'.
  * @param  array  $exclusions Optional. Filenames to exclude from consideration
- *                            as a random file.
+ *                            as a random file. Default empty array.
  * @return string[] The random files chosen.
  */
-function c2c_random_files( $number, $dir, $extensions = '', $reftype = 'relative', $exclusions = array() ) {
+function c2c_random_files( $number, $dir, $extensions = array(), $reftype = 'relative', $exclusions = array() ) {
 	$number     = absint( $number );
 	$exclusions = (array) $exclusions;
 	$files      = array();

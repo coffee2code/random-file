@@ -64,6 +64,18 @@ class Random_File_Test extends WP_UnitTestCase {
 		$this->assertRegExp( '~wp-includes/images/.+\.gif$~', $random_file );
 	}
 
+	public function test_no_matching_extension_when_regex_character_used() {
+		$random_file = c2c_random_file( 'wp-includes/images', 'g.f' );
+
+		$this->assertFalse( $random_file );
+	}
+
+	public function test_no_matching_extension_via_array_when_regex_character_used() {
+		$random_file = c2c_random_file( 'wp-includes/images', array( 'g.f' ) );
+
+		$this->assertFalse( $random_file );
+	}
+
 	public function test_matching_extension_case_insensitivity( $random_file = '' ) {
 		if ( empty( $random_file ) ) {
 			$random_file = c2c_random_file( 'wp-includes/images', 'GIF' );
@@ -82,8 +94,20 @@ class Random_File_Test extends WP_UnitTestCase {
 		$this->assertRegExp( '~wp-includes/images/.+\.(jpg|gif)$~', $random_file );
 	}
 
+	public function test_matching_multiple_extensions_via_array() {
+		$random_file = c2c_random_file( 'wp-includes/images', array( 'jpg', 'gif' ) );
+
+		$this->assertNotEmpty( $random_file );
+		$this->assertFileExists( ABSPATH . $random_file );
+		$this->assertRegExp( '~wp-includes/images/.+\.(jpg|gif)$~', $random_file );
+	}
+
 	public function test_no_matching_extension() {
-		$this->assertEmpty( c2c_random_file( 'wp-includes/images', 'xxx' ) );
+		$this->assertFalse( c2c_random_file( 'wp-includes/images', 'xxx' ) );
+	}
+
+	public function test_no_matching_extension_via_array() {
+		$this->assertFalse( c2c_random_file( 'wp-includes/images', array( 'xxx' ) ) );
 	}
 
 	public function test_reftype_relative() {
