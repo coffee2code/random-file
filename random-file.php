@@ -148,7 +148,12 @@ function c2c_random_file( $dir, $extensions = '', $reftype = 'relative', $exclus
 	}
 
 	if ( 'hyperlink' == $reftype ) {
-		return '<a href="' . esc_url( $url ) . '" title="' . esc_attr( $random_file ) . '">' . $random_file . '</a>';
+		return sprintf(
+			'<a href="%s" title="%s">%s</a>',
+			esc_url( $url ),
+			esc_attr( $random_file ),
+			$random_file
+		);
 	}
 
 	// Else this is handling 'relative' == $reftype

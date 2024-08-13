@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* Change: Use cleaner `sprintf()` approach to outputting markup
 * Change: Note compatibility through WP 6.6+
 * Change: Update copyright date (2024)
 * Change: Tweak filter descriptions in `readme.txt`
