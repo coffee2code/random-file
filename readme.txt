@@ -15,7 +15,7 @@ Retrieve the name, path, or link to a randomly chosen file or files in a specifi
 
 This plugin provides template tags that allow you to retrieve the name, path (relative or absolute), url, or fully marked-up link to a randomly chosen file or files in a specified directory.
 
-Arguments to the functions permit you to specify limit what file(s) can be randomly selected based on a given set of file extensions. You can also explicitly specify files that should not be randomly selected.
+Arguments to the functions permit you to limit what file(s) can be randomly selected based on a given set of file extensions. You can also explicitly specify files that should not be randomly selected.
 
 This functionality can be useful for displaying random images/logos or including text from random files onto your site (writing excerpts, multi-line quotes, etc). Other ideas: random ads, random CSS files, random theme template selection.
 
