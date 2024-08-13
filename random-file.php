@@ -79,7 +79,7 @@ if ( ! function_exists( 'c2c_random_file' ) ):
  *                            relative, or url.  Default 'relative'.
  * @param  array  $exclusions Optional. Filenames to exclude from consideration
  *                            as a random file.
- * @return string The random file chosen (if possible).
+ * @return string|false The random file chosen, or false if no file was found.
  */
 function c2c_random_file( $dir, $extensions = '', $reftype = 'relative', $exclusions = array() ) {
 	$files   = array();
@@ -99,12 +99,12 @@ function c2c_random_file( $dir, $extensions = '', $reftype = 'relative', $exclus
 	$abs_dir = ABSPATH . $dir;
 
 	if ( ! file_exists( $abs_dir ) ) {
-		return;
+		return false;
 	}
 
 	$handle = @opendir( $abs_dir );
 	if ( false === $handle ) {
-		return;
+		return false;
 	}
 
 	$exclusions = empty( $exclusions ) ? array() : array_map( 'basename', (array) $exclusions );
@@ -119,7 +119,7 @@ function c2c_random_file( $dir, $extensions = '', $reftype = 'relative', $exclus
 	closedir( $handle );
 
 	if ( empty( $files ) ) {
-		return;
+		return false;
 	}
 	
 	mt_srand( (double) microtime() * 1000000 );
@@ -187,7 +187,7 @@ if ( ! function_exists( 'c2c_random_files' ) ) :
  *                            relative, or url.  Default 'relative'.
  * @param  array  $exclusions Optional. Filenames to exclude from consideration
  *                            as a random file.
- * @return array  The random files chosen (if possible).
+ * @return string[] The random files chosen.
  */
 function c2c_random_files( $number, $dir, $extensions = '', $reftype = 'relative', $exclusions = array() ) {
 	$number     = absint( $number );

@@ -53,7 +53,7 @@ class Random_File_Test extends WP_UnitTestCase {
 	}
 
 	public function test_invalid_directory() {
-		$this->assertEmpty( c2c_random_file( 'nonexistent' ) );
+		$this->assertFalse( c2c_random_file( 'nonexistent' ) );
 	}
 
 	public function test_matching_extension() {
@@ -138,7 +138,7 @@ class Random_File_Test extends WP_UnitTestCase {
 	}
 
 	public function test_return_empty_when_all_files_in_directory_excluded() {
-		$this->assertEmpty( c2c_random_file( 'wp-includes/images', '', '', self::$wp_includes_images ) );
+		$this->assertFalse( c2c_random_file( 'wp-includes/images', '', '', self::$wp_includes_images ) );
 	}
 
 	public function test_random_files( $random_files = array() ) {
@@ -151,6 +151,10 @@ class Random_File_Test extends WP_UnitTestCase {
 		foreach ( $random_files as $f ) {
 			$this->test_reftype_absolute( $f );
 		}
+	}
+
+	public function test_random_files_invalid_directory() {
+		$this->assertEmpty( c2c_random_files( 2, 'nonexistent' ) );
 	}
 
 	public function test_random_files_can_only_return_as_many_files_as_exist() {

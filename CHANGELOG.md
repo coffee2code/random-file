@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* Change: Explicitly return false if no file could be found
 * Change: Switch to use a switch statement, which is more concise
 * Change: Use cleaner `sprintf()` approach to outputting markup
 * Change: Note compatibility through WP 6.6+
