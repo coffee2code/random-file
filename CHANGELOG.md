@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* Change: Switch to using `wp_rand()` for more reliable randomization
 * Change: Allow `$extensions` argument to also accept an array of extensions
 * Change: Explicitly return false if no file could be found
 * Change: Switch to use a switch statement, which is more concise

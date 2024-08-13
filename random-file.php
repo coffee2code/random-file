@@ -128,8 +128,7 @@ function c2c_random_file( $dir, $extensions = array(), $reftype = 'relative', $e
 		return false;
 	}
 	
-	mt_srand( (double) microtime() * 1000000 );
-	$rand = mt_rand( 0, $i );
+	$rand = wp_rand( 0, $i );
 
 	if ( ! empty( $dir ) ) {
 		$dir .= '/';
