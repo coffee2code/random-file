@@ -60,8 +60,8 @@ As an overview, these are the template tags provided by the plugin:
 
 Theses are the hooks provided by the plugin:
 
-* `c2c_random_file`  : Allows use of an alternative approach to safely invoke `c2c_random_file()` in such a way that if the plugin were deactivated or deleted, then your calls to the function won't cause errors in your site.
-* `c2c_random_files` : Allows use of an alternative approach to safely invoke `c2c_random_files()` in such a way that if the plugin were deactivated or deleted, then your calls to the function won't cause errors in your site.
+* `c2c_random_file`  : Filter to safely invoke `c2c_random_file()` in such a way that if the plugin were deactivated or deleted, then your calls to the function won't cause errors in your site.
+* `c2c_random_files` : Filter to safely invoke `c2c_random_files()` in such a way that if the plugin were deactivated or deleted, then your calls to the function won't cause errors in your site.
 
 
 == Changelog ==
