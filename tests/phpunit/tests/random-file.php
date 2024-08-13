@@ -185,6 +185,16 @@ class Random_File_Test extends WP_UnitTestCase {
 		$this->assertEmpty( c2c_random_files( 2, 'nonexistent' ) );
 	}
 
+	public function test_random_files_no_matching_extension_via_array_when_regex_character_used() {
+		$random_file = c2c_random_files( 3, 'wp-includes/images', array( 'gif' ) );
+
+		$this->assertNotEmpty( $random_file );
+
+		$random_file = c2c_random_files( 3, 'wp-includes/images', array( 'g.f' ) );
+
+		$this->assertEmpty( $random_file );
+	}
+
 	public function test_random_files_can_only_return_as_many_files_as_exist() {
 		$num_images = count( self::$wp_includes_images );
 

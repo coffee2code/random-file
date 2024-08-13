@@ -14,6 +14,7 @@
 * Unit tests:
     * Hardening: Prevent direct web access to `bootstrap.php`
     * Allow tests to run against current versions of WordPress
+    * New: Add more unit tests
     * New: Add `composer.json` for PHPUnit Polyfill dependency
     * Change: In bootstrap, store path to plugin directory in a constant
     * Change: Rename a test
