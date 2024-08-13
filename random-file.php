@@ -87,14 +87,10 @@ function c2c_random_file( $dir, $extensions = array(), $reftype = 'relative', $e
 	$pattern = '/.*';
 
 	if ( ! empty( $extensions ) ) {
-		if ( is_array( $extensions ) ) {
-			$exts = array_map( '__c2c_random_file__sanitize_extension', $extensions );
-		} else {
-			$exts = array();
-			foreach ( explode( ' ', $extensions ) as $ext ) {
-				$exts[] = __c2c_random_file__sanitize_extension( $ext );
-			}
+		if ( is_string( $extensions ) ) {
+			$extensions = explode( ' ', $extensions );
 		}
+		$exts = array_map( '__c2c_random_file__sanitize_extension', (array) $extensions );
 		$pattern .= '\.(' . implode( '|', $exts ) . ')';
 	}
 	$pattern .= '$/i';
