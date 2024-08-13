@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 6.6
-Stable tag: 1.8.12
+Stable tag: 2.0
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
 
@@ -66,6 +66,33 @@ Theses are the hooks provided by the plugin:
 
 == Changelog ==
 
+= 2.0 (2024-08-13) =
+Highlights:
+
+This minor update features improved randomization of file selection, adds support for the extensions arugment to be an array, notes compatibility through WP 6.6+, removes unit tests from release packaging, updates copyright date (2024), and other code improvements and minor changes.
+
+Details:
+
+* Change: Switch to using `wp_rand()` for more reliable randomization
+* Change: Allow `$extensions` argument to also accept an array of extensions
+* Change: Strip surrounding whitespace and leading periods from provided extensions
+* Change: Explicitly return false if no file could be found
+* Change: Switch to use a switch statement, which is more concise
+* Change: Use cleaner `sprintf()` approach to outputting markup
+* Hardening: Escape text shown via 'hyperlink' output (though it's never anything other than plaintext)
+* Change: Note compatibility through WP 6.6+
+* Change: Update copyright date (2024)
+* Change: Tweak filter descriptions in `readme.txt`
+* New: Add `.gitignore` file
+* Change: Remove development and testing-related files from release packaging
+* Unit tests:
+    * Hardening: Prevent direct web access to `bootstrap.php`
+    * Allow tests to run against current versions of WordPress
+    * New: Add more unit tests
+    * New: Add `composer.json` for PHPUnit Polyfill dependency
+    * Change: In bootstrap, store path to plugin directory in a constant
+    * Change: Rename a test
+
 = 1.8.12 (2023-05-21) =
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
 * Change: Note compatibility through WP 6.3+
@@ -81,14 +108,13 @@ Theses are the hooks provided by the plugin:
     * Change: In bootstrap, store path to plugin file constant
     * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
 
-= 1.8.10 (2021-04-23) =
-* Change: Note compatibility through WP 5.7+
-* Change: Update copyright date (2021)
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/random-file/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.0 =
+Minor update: improved randomization of file selection, added support for the extensions arugment to be an array, noted compatibility through WP 6.6+, removed unit tests from release packaging, updated copyright date (2024), and other code improvements and minor changes
 
 = 1.8.12 =
 Trivial update: added DEVELOPER-DOCS.md, noted compatibility through WP 6.3+, and updated copyright date (2023)

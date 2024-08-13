@@ -1,6 +1,13 @@
 # Changelog
 
-## _(in-progress)_
+## 2.0 _(2024-08-13)_
+
+### Highlights:
+
+This minor update features improved randomization of file selection, adds support for the extensions arugment to be an array, notes compatibility through WP 6.6+, removes unit tests from release packaging, updates copyright date (2024), and other code improvements and minor changes.
+
+### Details:
+
 * Change: Switch to using `wp_rand()` for more reliable randomization
 * Change: Allow `$extensions` argument to also accept an array of extensions
 * Change: Strip surrounding whitespace and leading periods from provided extensions
