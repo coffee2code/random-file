@@ -141,6 +141,10 @@ class Random_File_Test extends WP_UnitTestCase {
 		$this->assertFalse( c2c_random_file( 'wp-includes/images', '', '', self::$wp_includes_images ) );
 	}
 
+	/*
+	 * c2c_random_files()
+	 */
+
 	public function test_random_files( $random_files = array() ) {
 		if ( empty( $random_files ) ) {
 			$random_files = c2c_random_files( 3, 'wp-includes/images', '', 'absolute' );
@@ -165,7 +169,7 @@ class Random_File_Test extends WP_UnitTestCase {
 		$this->assertEquals( $num_images, count( $random_files ) );
 	}
 
-	public function test_random_files_returns_all_files_if_number_exists_number_of_files() {
+	public function test_random_files_returns_all_files_if_number_exceeds_number_of_files() {
 		$num_images = count( self::$wp_includes_images );
 
 		$random_files = c2c_random_files( $num_images + 5, 'wp-includes/images', '', 'absolute' );
