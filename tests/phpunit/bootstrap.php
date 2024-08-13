@@ -5,6 +5,9 @@
  * @package Random_File
  */
 
+// Prevent web access.
+( php_sapi_name() !== 'cli' ) && die();
+
 define( 'RANDOM_FILE_PLUGIN_DIR',  dirname( __FILE__, 3 ) );
 define( 'RANDOM_FILE_PLUGIN_FILE', RANDOM_FILE_PLUGIN_DIR . '/random-file.php' );
 
