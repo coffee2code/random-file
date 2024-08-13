@@ -88,13 +88,11 @@ function c2c_random_file( $dir, $extensions = array(), $reftype = 'relative', $e
 
 	if ( ! empty( $extensions ) ) {
 		if ( is_array( $extensions ) ) {
-			$exts = array_map( function ( $ext ) {
-				return preg_quote( $ext, '/' );
-			}, $extensions );
+			$exts = array_map( '__c2c_random_file__sanitize_extension', $extensions );
 		} else {
 			$exts = array();
 			foreach ( explode( ' ', $extensions ) as $ext ) {
-				$exts[] = preg_quote( $ext, '/' );
+				$exts[] = __c2c_random_file__sanitize_extension( $ext );
 			}
 		}
 		$pattern .= '\.(' . implode( '|', $exts ) . ')';
@@ -167,6 +165,23 @@ add_filter( 'c2c_random_file', 'c2c_random_file', 10, 4 );
 
 endif;
 
+/**
+ * Sanitizes a file extension string before use.
+ *
+ * Currently:
+ * - Strips surrounding whitespace
+ * - Strips leading period, in case something like ".jpg" is provided
+ * - Escapes regular expression characters that may be present
+ *
+ * @access private
+ *
+ * @param string $extension The file extension to sanitize.
+ * @return string
+ */
+function __c2c_random_file__sanitize_extension( $extension ) {
+	$extension = ltrim( trim( $extension ), '.' );
+	return preg_quote( $extension, '/' );
+}
 
 if ( ! function_exists( 'c2c_random_files' ) ) :
 

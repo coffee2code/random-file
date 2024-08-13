@@ -94,8 +94,24 @@ class Random_File_Test extends WP_UnitTestCase {
 		$this->assertRegExp( '~wp-includes/images/.+\.(jpg|gif)$~', $random_file );
 	}
 
+	public function test_matching_multiple_extensions_with_leading_period() {
+		$random_file = c2c_random_file( 'wp-includes/images', '.jpg   .gif' );
+
+		$this->assertNotEmpty( $random_file );
+		$this->assertFileExists( ABSPATH . $random_file );
+		$this->assertRegExp( '~wp-includes/images/.+\.(jpg|gif)$~', $random_file );
+	}
+
 	public function test_matching_multiple_extensions_via_array() {
 		$random_file = c2c_random_file( 'wp-includes/images', array( 'jpg', 'gif' ) );
+
+		$this->assertNotEmpty( $random_file );
+		$this->assertFileExists( ABSPATH . $random_file );
+		$this->assertRegExp( '~wp-includes/images/.+\.(jpg|gif)$~', $random_file );
+	}
+
+	public function test_matching_multiple_extensions_with_leading_period_via_array() {
+		$random_file = c2c_random_file( 'wp-includes/images', array( '.jpg', '.gif' ) );
 
 		$this->assertNotEmpty( $random_file );
 		$this->assertFileExists( ABSPATH . $random_file );
@@ -225,4 +241,31 @@ class Random_File_Test extends WP_UnitTestCase {
 		$this->test_random_files( $random_files );
 	}
 
+	/*
+	 * __c2c_random_file__sanitize_extension()
+	 */
+
+	public function test___c2c_random_file__sanitize_extension_with_valid_extension() {
+		$ext = 'jpg';
+		$this->assertEquals( $ext, __c2c_random_file__sanitize_extension( $ext ) );
+	}
+
+	public function test___c2c_random_file__sanitize_extension_with_leading_period() {
+		$this->assertEquals( 'png', __c2c_random_file__sanitize_extension( '.png' ) );
+	}
+
+	public function test___c2c_random_file__sanitize_extension_with_surrounding_space_and_leading_period() {
+		$this->assertEquals( 'png', __c2c_random_file__sanitize_extension( ' .png ' ) );
+	}
+
+	public function test___c2c_random_file__sanitize_extension_with_surrounding_space() {
+		$this->assertEquals( 'png', __c2c_random_file__sanitize_extension( ' png  ' ) );
+	}
+
+	public function test___c2c_random_file__sanitize_extension_with_regular_expression_character() {
+		$this->assertEquals( 'p\.g', __c2c_random_file__sanitize_extension( 'p.g' ) );
+		$this->assertEquals( 'p\*g', __c2c_random_file__sanitize_extension( 'p*g' ) );
+		$this->assertEquals( 'p\+g', __c2c_random_file__sanitize_extension( 'p+g' ) );
+		$this->assertEquals( 'p\\\\\\[g', __c2c_random_file__sanitize_extension( 'p\[g' ) );
+	}
 }
