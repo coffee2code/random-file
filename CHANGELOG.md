@@ -7,6 +7,7 @@
 * Change: Explicitly return false if no file could be found
 * Change: Switch to use a switch statement, which is more concise
 * Change: Use cleaner `sprintf()` approach to outputting markup
+* Hardening: Escape text shown via 'hyperlink' output (though it's never anything other than plaintext)
 * Change: Note compatibility through WP 6.6+
 * Change: Update copyright date (2024)
 * Change: Tweak filter descriptions in `readme.txt`

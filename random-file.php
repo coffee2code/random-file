@@ -144,7 +144,7 @@ function c2c_random_file( $dir, $extensions = array(), $reftype = 'relative', $e
 				'<a href="%s" title="%s">%s</a>',
 				esc_url( $url ),
 				esc_attr( $random_file ),
-				$random_file
+				esc_html( $random_file )
 			);
 		case 'url':
 			return $url;
