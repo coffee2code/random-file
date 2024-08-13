@@ -135,34 +135,27 @@ function c2c_random_file( $dir, $extensions = '', $reftype = 'relative', $exclus
 		$url = trailingslashit( get_option( 'siteurl' ) ) . $dir . $random_file;
 	}
 
-	if ( 'url' == $reftype ) {
-		return $url;
+	switch ( $reftype ) {
+		case 'absolute':
+			return $abs_dir . DIRECTORY_SEPARATOR . $random_file; /* could also do realpath($random_file); */
+		case 'filename':
+			return $random_file;
+		case 'hyperlink':
+			return sprintf(
+				'<a href="%s" title="%s">%s</a>',
+				esc_url( $url ),
+				esc_attr( $random_file ),
+				$random_file
+			);
+		case 'url':
+			return $url;
+		case 'relative':
+		default:
+			// Need to obtain location relative to root of domain (in case site is based out of subdirectory)
+			preg_match( "/^(https?:\/\/)?([^\/]+)\/?(.+)?$/", get_option( 'siteurl' ), $matches );
+			$relpath = isset( $matches[3] ) ? '/' . $matches[3] : '';
+			return $relpath . '/' . $dir . $random_file;
 	}
-
-	if ( 'absolute' == $reftype ) {
-		return $abs_dir . DIRECTORY_SEPARATOR . $random_file;	/* could also do realpath($random_file); */
-	}
-
-	if ( 'filename' == $reftype ) {
-		return $random_file;
-	}
-
-	if ( 'hyperlink' == $reftype ) {
-		return sprintf(
-			'<a href="%s" title="%s">%s</a>',
-			esc_url( $url ),
-			esc_attr( $random_file ),
-			$random_file
-		);
-	}
-
-	// Else this is handling 'relative' == $reftype
-
-	// Need to obtain location relative to root of domain (in case site is based out of subdirectory)
-	preg_match( "/^(https?:\/\/)?([^\/]+)\/?(.+)?$/", get_option( 'siteurl' ), $matches );
-	$relpath = isset( $matches[3] ) ? '/' . $matches[3] : '';
-
-	return $relpath . '/' . $dir . $random_file;
 } //end c2c_random_file()
 
 add_filter( 'c2c_random_file', 'c2c_random_file', 10, 4 );
