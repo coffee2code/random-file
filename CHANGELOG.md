@@ -4,6 +4,8 @@
 * Fix: Fix typos in documentation
 * Change: Note compatibility through WP 6.8+
 * Change: Update copyright date (2025)
+* Unit tests:
+    * Change: Explicitly define return type for overridden method
 
 ## 2.0 _(2024-08-13)_
 

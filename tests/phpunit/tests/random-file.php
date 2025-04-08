@@ -6,7 +6,7 @@ class Random_File_Test extends WP_UnitTestCase {
 
 	protected static $wp_includes_images = array();
 
-	public static function setUpBeforeClass() {
+	public static function setUpBeforeClass(): void {
 		$files = glob( ABSPATH . 'wp-includes/images/*.*' );
 		sort( $files );
 		self::$wp_includes_images = $files;
