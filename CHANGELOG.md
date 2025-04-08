@@ -1,13 +1,14 @@
 # Changelog
 
 ## _(in-progress)_
+* Change: Note compatibility through WP 6.8+
 * Change: Update copyright date (2025)
 
 ## 2.0 _(2024-08-13)_
 
 ### Highlights:
 
-This minor update features improved randomization of file selection, adds support for the extensions arugment to be an array, notes compatibility through WP 6.6+, removes unit tests from release packaging, updates copyright date (2024), and other code improvements and minor changes.
+This minor update features improved randomization of file selection, adds support for the extensions argument to be an array, notes compatibility through WP 6.6+, removes unit tests from release packaging, updates copyright date (2024), and other code improvements and minor changes.
 
 ### Details:
 
