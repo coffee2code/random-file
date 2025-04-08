@@ -1,6 +1,6 @@
 # Changelog
 
-## _(in-progress)_
+## 2.0.1 _(2025-04-08)_
 * Fix: Fix typos in documentation
 * Change: Note compatibility through WP 6.8+
 * Change: Update copyright date (2025)

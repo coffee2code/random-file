@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 6.8
-Stable tag: 2.0
+Stable tag: 2.0.1
 
 Retrieve the name, path, or link to a randomly chosen file or files in a specified directory.
 
@@ -66,6 +66,15 @@ These are the hooks provided by the plugin:
 
 == Changelog ==
 
+= 2.0.1 (2025-04-08) =
+* Fix: Fix typos in documentation
+* Change: Note compatibility through WP 6.8+
+* Change: Update copyright date (2025)
+* Unit tests:
+    * Change: Switch uses of `assertRegExp()` to `assertMatchesRegularExpression()` for future PHPUnit 10 compatibility
+    * Change: Explicitly define return type for overridden method
+
+
 = 2.0 (2024-08-13) =
 Highlights:
 
@@ -98,20 +107,13 @@ Details:
 * Change: Note compatibility through WP 6.3+
 * Change: Update copyright date (2023)
 
-= 1.8.11 (2021-09-18) =
-* Change: Note compatibility through WP 5.8+
-* Unit tests:
-    * Change: Restructure unit test directories
-        * Change: Move `phpunit/` into `tests/`
-        * Change: Move `phpunit/bin` into `tests/`
-    * Change: Remove 'test-' prefix from unit test file
-    * Change: In bootstrap, store path to plugin file constant
-    * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/random-file/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.0.1 =
+Trivial update: fixed some typos in documentation, noted compatibility through WP 6.8+, and updated copyright date (2025).
 
 = 2.0 =
 Minor update: improved randomization of file selection, added support for the extensions arugment to be an array, noted compatibility through WP 6.6+, removed unit tests from release packaging, updated copyright date (2024), and other code improvements and minor changes
