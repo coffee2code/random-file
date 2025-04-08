@@ -46,7 +46,7 @@ No. This plugin only selects a random file when the page is loaded. Once loaded,
 
 = Does this plugin include unit tests? =
 
-Yes. The tests are not packaged in the release .zip file or included in plugins.svn.wordpress.org, but can be found in the [plugin's GitHub repository](https://github.com/coffee2code/configure-smtp/).
+Yes. The tests are not packaged in the release .zip file or included in plugins.svn.wordpress.org, but can be found in the [plugin's GitHub repository](https://github.com/coffee2code/random-file/).
 
 
 == Developer Documentation ==
@@ -58,7 +58,7 @@ As an overview, these are the template tags provided by the plugin:
 * `c2c_random_file()`  : Retrieves the name of a random file from a specified directory and returns information based on the file.
 * `c2c_random_files()` : Retrieves the name, path, or link to a specified number of randomly chosen files in a specified directory.
 
-Theses are the hooks provided by the plugin:
+These are the hooks provided by the plugin:
 
 * `c2c_random_file`  : Filter to safely invoke `c2c_random_file()` in such a way that if the plugin were deactivated or deleted, then your calls to the function won't cause errors in your site.
 * `c2c_random_files` : Filter to safely invoke `c2c_random_files()` in such a way that if the plugin were deactivated or deleted, then your calls to the function won't cause errors in your site.
@@ -69,7 +69,7 @@ Theses are the hooks provided by the plugin:
 = 2.0 (2024-08-13) =
 Highlights:
 
-This minor update features improved randomization of file selection, adds support for the extensions arugment to be an array, notes compatibility through WP 6.6+, removes unit tests from release packaging, updates copyright date (2024), and other code improvements and minor changes.
+This minor update features improved randomization of file selection, adds support for the extensions argument to be an array, notes compatibility through WP 6.6+, removes unit tests from release packaging, updates copyright date (2024), and other code improvements and minor changes.
 
 Details:
 
